@@ -1,5 +1,5 @@
 .body {
-	flex: 0.8;
+	flex: 1;
 	height: 100vh;
 	color: white;
 	padding: 30px;
@@ -59,4 +59,30 @@
 
 .body__infoText > p {
 	font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+	.body__infoText > h2 {
+		font-size: 25px;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (min-width: 360px) {
+}
+
+@media screen and (min-width: 540px) {
+}
+
+@media screen and (min-width: 768px) {
+	.body {
+		flex: 0.8;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.body__infoText > h2 {
+		font-size: 48px;
+		margin-bottom: 10px;
+	}
 }

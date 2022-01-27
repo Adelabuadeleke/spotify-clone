@@ -10,7 +10,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   // const  [token, setToken] = useState(null);
-  const [{user, token}, dispatch] = useDataLayerValue();
+  const [{token}, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -41,6 +41,11 @@ function App() {
         })
       })
 
+      dispatch({
+        type: "SET_SPOTIFY",
+        spotify: spotify,
+      });
+
       spotify.getPlaylist('37i9dQZEVXcIM2lOqsYRSU').then((response) => {
         dispatch({
           type:'SET_DISCOVER_WEEKLY',
@@ -51,7 +56,7 @@ function App() {
     }
 
     // console.log("I HAVE A TOKEN", token)
-  }, []);
+  }, [token, dispatch]);
   
   // console.log(user);
 
