@@ -16,6 +16,7 @@ function Body({spotify}) {
         context_uri: `spotify:playlist:37i9dQZEVXcIM2lOqsYRSU`,
       })
       .then((res) => {
+        console.log(res)
         spotify.getMyCurrentPlayingTrack().then((r) => {
           dispatch({
             type: "SET_ITEM",
@@ -30,6 +31,7 @@ function Body({spotify}) {
   };
 
   const playSong = (id) => {
+    console.log(id)
     spotify.play({
         uris: [`spotify:track:${id}`],
       })
